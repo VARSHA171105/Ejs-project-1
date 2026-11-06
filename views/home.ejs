@@ -1,75 +1,68 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Student Mark Evaluation</title>
+<%- include("partials/header") %>
 
-    <style>
-        body {
-            font-family: Arial;
-            background-color: #eaf2f8;
-            text-align: center;
-        }
+<style>
+    body {
+        font-family: Arial;
+        background-color: #eaf2f8;
+        text-align: center;
+    }
 
-        form {
-            background-color: white;
-            width: 350px;
-            margin: 40px auto;
-            padding: 20px;
-            border-radius: 10px;
-        }
+    form {
+        background-color: white;
+        width: 350px;
+        margin: 40px auto;
+        padding: 20px;
+        border-radius: 10px;
+    }
 
-        input {
-            padding: 10px;
-            margin: 8px;
-            width: 85%;
-        }
+    input {
+        padding: 10px;
+        margin: 8px;
+        width: 85%;
+    }
 
-        button {
-            padding: 10px 20px;
-            background-color: navy;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
+    button {
+        padding: 10px 20px;
+        background-color: navy;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
 
-<body>
+<h2>Student Mark Evaluation</h2>
 
-    <h1>Student Mark Evaluation</h1>
+<!-- Form submits data to the /evaluate route -->
+<form action="/evaluate" method="POST">
 
-    <!-- Form submits data to the /evaluate route -->
-    <form action="/evaluate" method="POST">
+    <input type="text"
+           name="name"
+           placeholder="Student Name"
+           required>
 
-        <input type="text"
-               name="name"
-               placeholder="Student Name"
-               required>
+    <input type="number"
+           name="mark1"
+           placeholder="Java Mark"
+           min="0" max="100"
+           required>
 
-        <input type="number"
-               name="mark1"
-               placeholder="Java Mark"
-               min="0" max="100"
-               required>
+    <input type="number"
+           name="mark2"
+           placeholder="Web Technology Mark"
+           min="0" max="100"
+           required>
 
-        <input type="number"
-               name="mark2"
-               placeholder="Web Technology Mark"
-               min="0" max="100"
-               required>
+    <input type="number"
+           name="mark3"
+           placeholder="Networks Mark"
+           min="0" max="100"
+           required>
 
-        <input type="number"
-               name="mark3"
-               placeholder="Networks Mark"
-               min="0" max="100"
-               required>
+    <br><br>
 
-        <br><br>
+    <button type="submit">Evaluate Marks</button>
 
-        <button type="submit">Evaluate Marks</button>
+</form>
 
-    </form>
-
-</body>
-</html>
+<%- include("partials/footer") %>
