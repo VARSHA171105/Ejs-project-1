@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #eaf2f8;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 12px;
+        }
+
+        th {
+            background-color: navy;
+            color: white;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+
+        .pass {
+            color: green;
+        }
+
+        .fail {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Mark Statement</h1>
+
+    <h2>Welcome <%= name %></h2>
+
+    <!-- Calculate total and average using JavaScript -->
+    <%
+        let total = mark1 + mark2 + mark3;
+        let average = total / 3;
+    %>
+
+    <table>
+
+        <tr>
+            <th>Subject</th>
+            <th>Mark</th>
+        </tr>
+
+        <tr>
+            <td>Java</td>
+            <td><%= mark1 %></td>
+        </tr>
+
+        <tr>
+            <td>Web Technology</td>
+            <td><%= mark2 %></td>
+        </tr>
+
+        <tr>
+            <td>Computer Networks</td>
+            <td><%= mark3 %></td>
+        </tr>
+
+        <tr>
+            <th>Total</th>
+            <th><%= total %></th>
+        </tr>
+
+        <tr>
+            <th>Average</th>
+            <th><%= average.toFixed(2) %></th>
+        </tr>
+
+    </table>
+
+    <!-- Evaluate the result using an if-else condition -->
+
+    <% if (mark1 >= 50 && mark2 >= 50 && mark3 >= 50) { %>
+
+        <h2 class="pass">Result: PASS</h2>
+
+    <% } else { %>
+
+        <h2 class="fail">Result: FAIL</h2>
+
+    <% } %>
+
+    <a href="/">Back to Student Form</a>
+
+</body>
+</html>
